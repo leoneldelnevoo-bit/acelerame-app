@@ -2,7 +2,7 @@ import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 import { createMasterServerClient } from '@/lib/supabase/server'
 
 /**
- * InformaciÃ³n completa del cliente logueado.
+ * Información completa del cliente logueado.
  */
 export interface ClienteContext {
   id: string
@@ -69,11 +69,11 @@ export async function getClienteContext(): Promise<ClienteContext | null> {
 /**
  * Crea un cliente Supabase apuntando al proyecto del CLIENTE logueado.
  *
- * BYODB: si el cliente conectÃ³ su propio Supabase, lee de allÃ­.
- * Si todavÃ­a no conectÃ³ nada, devuelve null (la pÃ¡gina debe pedirle conectar).
+ * BYODB: si el cliente conectó su propio Supabase, lee de allí.
+ * Si todavía no conectó nada, devuelve null (la página debe pedirle conectar).
  *
  * Para Leo (founder), apunta al schema 'public' del proyecto master usando
- * la anon key pÃºblica. Para Poncho y otros, apunta al Supabase del cliente.
+ * la anon key pública. Para Poncho y otros, apunta al Supabase del cliente.
  */
 export function createClienteSupabase(cliente: ClienteContext) {
   if (!cliente.supabase_url) return null
