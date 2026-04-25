@@ -68,3 +68,5 @@ Wallet: `TDzkBiQiMc8EnxWZ5f1wVBi4hSx5aRfHWy`
 - Cliente: poncho@sukhafe.com / Sukhafe2026!
 - Admin: leoneldelnevo@gmail.com / Acelerame2026!
 
+
+<!-- redeploy trigger -->
