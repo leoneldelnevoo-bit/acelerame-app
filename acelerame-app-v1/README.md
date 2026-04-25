@@ -67,3 +67,5 @@ Auto-deploy a Vercel al push a `main`.
 - [ ] Panel admin
 - [ ] Workflow n8n parametrizado
 - [ ] Migración Poncho al nuevo sistema
+
+<!-- deploy 1777085257386 -->
