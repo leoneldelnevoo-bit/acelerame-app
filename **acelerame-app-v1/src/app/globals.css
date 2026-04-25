@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ═══════════════════════════════════════════════════════════════
+   Base ACELERAME — Fondo negro profundo, texto claro por default
+   ═══════════════════════════════════════════════════════════════ */
+@layer base {
+  html {
+    @apply bg-bg-base text-fg;
+  }
+
+  body {
+    @apply bg-bg-base text-fg font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+  }
+
+  ::selection {
+    @apply bg-gold/30 text-fg;
+  }
+
+  /* Scrollbar sutil en oro */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-bg-base;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold-dim;
+  }
+
+  /* Focus ring dorado */
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold/50 ring-offset-2 ring-offset-bg-base;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Componentes reutilizables
+   ═══════════════════════════════════════════════════════════════ */
+@layer components {
+  /* Superficie (cards, paneles) */
+  .surface {
+    @apply bg-bg-elevated border border-border rounded-lg;
+  }
+
+  .surface-hover {
+    @apply surface transition-all hover:border-gold-dim hover:shadow-gold;
+  }
+
+  /* Botón primario dorado */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           px-5 py-2.5 rounded-lg font-medium
+           bg-gold text-bg-base hover:bg-gold-hover
+           transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed
+           focus-visible:ring-gold;
+  }
+
+  /* Botón secundario outline dorado */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           px-5 py-2.5 rounded-lg font-medium
+           bg-transparent border border-border-strong text-fg
+           hover:border-gold hover:text-gold
+           transition-all duration-200;
+  }
+
+  /* Botón fantasma (bajo protagonismo) */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2
+           px-4 py-2 rounded-lg font-medium
+           bg-transparent text-fg-muted hover:text-fg hover:bg-bg-overlay
+           transition-all;
+  }
+
+  /* Input con estilo oro moderno */
+  .input {
+    @apply w-full px-4 py-2.5 rounded-lg
+           bg-bg-overlay border border-border text-fg
+           placeholder:text-fg-subtle
+           focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold/40
+           transition-colors;
+  }
+
+  /* Texto de etiqueta */
+  .label {
+    @apply block text-sm font-medium text-fg-muted mb-1.5;
+  }
+
+  /* Valor destacado (números grandes) */
+  .metric {
+    @apply font-serif text-4xl font-bold text-gold;
+  }
+
+  /* Tarjeta flotante dorada (highlights) */
+  .card-gold {
+    @apply bg-gradient-to-br from-bg-elevated to-bg-overlay
+           border border-gold/30 rounded-xl p-6
+           shadow-gold transition-all duration-300;
+  }
+
+  .card-gold:hover {
+    @apply border-gold/60 shadow-gold-strong;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Animaciones y efectos especiales
+   ═══════════════════════════════════════════════════════════════ */
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent
+           bg-gradient-to-r from-gold-400 via-gold to-gold-300;
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 215, 0, 0.08) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+    @apply animate-shimmer;
+  }
+}
